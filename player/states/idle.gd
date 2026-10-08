@@ -1,11 +1,11 @@
-class_name PlayerStateRun extends PlayerState
+class_name PlayerStateIdle extends PlayerState
 
 func init() -> void:
 	pass
 
 # what happens when we enter this state?
 func enter() -> void:
-	# run animation
+	# animation
 	pass
 
 # what happens when we exit this state?
@@ -14,14 +14,18 @@ func exit() -> void:
 
 # what happens when an input is pressed?
 func handle_input( _event : InputEvent ) -> PlayerState:
-	# handle inputs
+	# handle input
+	if _event.is_action_pressed("jump"):
+		return jump
 	return next_state
 
 func process( _delta: float ) -> PlayerState:
-	if player.direction.x == 0:
-		return idle
+	if player.direction.x != 0:
+		return run
 	return next_state
 
 func physics_process( _delta: float) -> PlayerState:
-	player.velocity.x = player.direction.x * player.move_speed
+	player.velocity.x = 0
+	if player.is_on_floor() == false:
+		return fall
 	return next_state

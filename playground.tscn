@@ -45,5 +45,15 @@ texture = SubResource("GradientTexture2D_qrb51")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D3/StaticBody2D" unique_id=1968794299]
 shape = SubResource("RectangleShape2D_qrb51")
 
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=641971016]
+position = Vector2(383, 235)
+scale = Vector2(2.813748, 2.5150008)
+texture = SubResource("GradientTexture2D_qrb51")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D4" unique_id=278258194]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D4/StaticBody2D" unique_id=1411921226]
+shape = SubResource("RectangleShape2D_qrb51")
+
 [node name="Player" parent="." unique_id=1968859610 instance=ExtResource("1_rupst")]
 position = Vector2(237, 128)
