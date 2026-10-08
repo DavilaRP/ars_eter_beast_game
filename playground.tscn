@@ -46,4 +46,4 @@ texture = SubResource("GradientTexture2D_qrb51")
 shape = SubResource("RectangleShape2D_qrb51")
 
 [node name="Player" parent="." unique_id=1968859610 instance=ExtResource("1_rupst")]
-position = Vector2(232, 250)
+position = Vector2(237, 128)
