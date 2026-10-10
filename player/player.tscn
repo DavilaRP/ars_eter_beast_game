@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dfmm8nurv4e5e" path="res://player/states/run.gd" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://dnrlt7yhi1ojm" path="res://player/states/jump.gd" id="4_yw30f"]
 [ext_resource type="Script" uid="uid://c0lc136at70c0" path="res://player/states/fall.gd" id="5_qjkh3"]
+[ext_resource type="Script" uid="uid://cjt04wbjoyrsf" path="res://player/states/crouch.gd" id="6_boad6"]
 [ext_resource type="PackedScene" uid="uid://ct0ubrd7bcblp" path="res://player/debug_jump_indicator.tscn" id="6_g6k8r"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qrb51"]
@@ -13,6 +14,9 @@ size = Vector2(16, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrb51"]
 size = Vector2(14, 30)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boad6"]
+size = Vector2(14, 20)
+
 [node name="Player" type="CharacterBody2D" unique_id=1968859610]
 script = ExtResource("1_oul6g")
 
@@ -20,9 +24,14 @@ script = ExtResource("1_oul6g")
 position = Vector2(0, -16)
 texture = SubResource("PlaceholderTexture2D_qrb51")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1556554824]
+[node name="CollisionStand" type="CollisionShape2D" parent="." unique_id=1556554824]
 position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_qrb51")
+
+[node name="CollisionCrouch" type="CollisionShape2D" parent="." unique_id=1164410738]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_boad6")
+disabled = true
 
 [node name="States" type="Node" parent="." unique_id=1471669230]
 
@@ -42,6 +51,10 @@ script = ExtResource("4_yw30f")
 unique_name_in_owner = true
 script = ExtResource("5_qjkh3")
 
+[node name="Crouch" type="Node" parent="States" unique_id=1080608921]
+unique_name_in_owner = true
+script = ExtResource("6_boad6")
+
 [node name="Label" type="Label" parent="." unique_id=1114461346]
 offset_left = -35.0
 offset_top = -48.0
@@ -52,3 +65,8 @@ text = "label"
 horizontal_alignment = 1
 
 [node name="Debug Jump Indicator" parent="." unique_id=638014703 instance=ExtResource("6_g6k8r")]
+visible = false
+
+[node name="OneWayPlatformRaycast" type="RayCast2D" parent="." unique_id=323953076]
+target_position = Vector2(0, 4)
+collision_mask = 2

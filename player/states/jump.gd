@@ -11,6 +11,13 @@ func enter() -> void:
 	# play animation
 	player.add_debug_indicator( Color.LIME_GREEN )
 	player.velocity.y = -jump_velocity
+	
+	# buffer jump bug patch
+	if player.previous_state == fall and not Input.is_action_pressed("jump"):
+		await get_tree().physics_frame
+		player.velocity.y *= 0.7
+		player.change_state( fall )
+	
 	pass
 
 # what happens when we exit this state?
