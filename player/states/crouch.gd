@@ -7,12 +7,11 @@ func init() -> void:
 
 # what happens when we enter this state?
 func enter() -> void:
-	# animation
+	player.animation_player.play( "idle" )
 	player.collision_stand.disabled = true
 	player.collision_crouch.disabled = false
-	player.sprite.scale.y = 0.625
-	player.sprite.position.y = -10
-	if player.one_way_platform_raycast.is_colliding() == true:
+	player.one_way_shape_cast.force_shapecast_update()
+	if player.one_way_shape_cast.is_colliding():
 		player.position.y += 4
 	pass
 
@@ -20,8 +19,6 @@ func enter() -> void:
 func exit() -> void:
 	player.collision_stand.disabled = false
 	player.collision_crouch.disabled = true
-	player.sprite.scale.y = 1.0
-	player.sprite.position.y = -16
 	pass
 
 # what happens when an input is pressed?

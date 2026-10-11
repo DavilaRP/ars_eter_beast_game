@@ -6,6 +6,7 @@ func init() -> void:
 # what happens when we enter this state?
 func enter() -> void:
 	# animation
+	player.animation_player.play( "idle" )
 	pass
 
 # what happens when we exit this state?
@@ -24,7 +25,6 @@ func process( _delta: float ) -> PlayerState:
 		return run
 	elif player.direction.y > 0.5:
 		return crouch
-		pass
 	return next_state
 
 func physics_process( _delta: float) -> PlayerState:

@@ -1,7 +1,7 @@
 class_name PlayerStateFall extends PlayerState
 
 @export var fall_gravity_multiplier : float = 1.165
-@export var coyote_time : float = 0.1
+@export var coyote_time : float = 0.075
 @export var jump_buffer_time : float = 0.08
 
 var coyote_timer : float = 0

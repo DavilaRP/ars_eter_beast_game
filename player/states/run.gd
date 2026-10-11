@@ -5,11 +5,13 @@ func init() -> void:
 
 # what happens when we enter this state?
 func enter() -> void:
-	# run animation
+	player.animation_player.play( "run_2" )
+	player.animation_player.speed_scale = 1.2
 	pass
 
 # what happens when we exit this state?
 func exit() -> void:
+	player.animation_player.speed_scale = 1
 	pass
 
 # what happens when an input is pressed?
