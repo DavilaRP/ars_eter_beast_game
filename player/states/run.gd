@@ -1,12 +1,14 @@
 class_name PlayerStateRun extends PlayerState
 
+@export var run_animation_speed : float = 1.2
+
 func init() -> void:
 	pass
 
 # what happens when we enter this state?
 func enter() -> void:
 	player.animation_player.play( "run_2" )
-	player.animation_player.speed_scale = 1.2
+	player.animation_player.speed_scale = run_animation_speed
 	pass
 
 # what happens when we exit this state?

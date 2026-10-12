@@ -7,7 +7,7 @@ func init() -> void:
 
 # what happens when we enter this state?
 func enter() -> void:
-	player.animation_player.play( "idle" )
+	player.animation_player.play( "crouch" )
 	player.collision_stand.disabled = true
 	player.collision_crouch.disabled = false
 	player.one_way_shape_cast.force_shapecast_update()

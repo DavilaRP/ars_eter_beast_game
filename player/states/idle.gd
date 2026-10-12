@@ -5,7 +5,6 @@ func init() -> void:
 
 # what happens when we enter this state?
 func enter() -> void:
-	# animation
 	player.animation_player.play( "idle" )
 	pass
 
