@@ -4,10 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://f2imoeg3uv2p" path="res://player/sprites/CainComCrouch.png" id="2_rgyib"]
 [ext_resource type="Script" uid="uid://rt834c6eg5ke" path="res://player/states/idle.gd" id="2_rkbax"]
 [ext_resource type="Script" uid="uid://dfmm8nurv4e5e" path="res://player/states/run.gd" id="3_g1dw6"]
+[ext_resource type="Texture2D" uid="uid://bnjycpuy6vo5c" path="res://player/sprites/CainNormal.png" id="3_hg6s5"]
 [ext_resource type="Script" uid="uid://dnrlt7yhi1ojm" path="res://player/states/jump.gd" id="4_yw30f"]
 [ext_resource type="Script" uid="uid://c0lc136at70c0" path="res://player/states/fall.gd" id="5_qjkh3"]
 [ext_resource type="Script" uid="uid://cjt04wbjoyrsf" path="res://player/states/crouch.gd" id="6_boad6"]
 [ext_resource type="PackedScene" uid="uid://ct0ubrd7bcblp" path="res://player/debug_jump_indicator.tscn" id="6_g6k8r"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_rgyib"]
+diffuse_texture = ExtResource("2_rgyib")
+normal_texture = ExtResource("3_hg6s5")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hg6s5"]
 radius = 6.0
@@ -160,7 +165,7 @@ script = ExtResource("1_oul6g")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=455614418]
 position = Vector2(9, -14)
-texture = ExtResource("2_rgyib")
+texture = SubResource("CanvasTexture_rgyib")
 hframes = 8
 vframes = 18
 
@@ -218,3 +223,6 @@ shape = SubResource("RectangleShape2D_vk5d2")
 target_position = Vector2(0, 2)
 max_results = 12
 collision_mask = 2
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=788565288]
+position = Vector2(1, -20)

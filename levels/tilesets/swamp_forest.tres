@@ -1,13 +1,19 @@
 [gd_resource type="TileSet" format=3 uid="uid://ce2pdl1d2s3gm"]
 
 [ext_resource type="Texture2D" uid="uid://cf7vj2c8ifr7k" path="res://levels/tilesets/sprites/SwampForestTiles.png" id="1_76elo"]
+[ext_resource type="Texture2D" uid="uid://5h1oevqdyq8n" path="res://levels/tilesets/sprites/MuddySwamp_n.png" id="1_iub51"]
 [ext_resource type="Texture2D" uid="uid://bfi4xaqwim3bf" path="res://levels/tilesets/sprites/MuddySwamp.png" id="2_wpudk"]
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_fjint"]
+diffuse_texture = ExtResource("1_76elo")
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wpudk"]
-texture = ExtResource("1_76elo")
+resource_name = "SwampForestTiles"
+texture = SubResource("CanvasTexture_fjint")
 0:0/0 = 0
 0:0/0/terrain_set = 1
 0:0/0/terrain = 0
+0:0/0/probability = 0.5
 0:0/0/terrains_peering_bit/right_side = 0
 1:0/0 = 0
 1:0/0/terrain_set = 1
@@ -17,38 +23,7 @@ texture = ExtResource("1_76elo")
 2:0/0 = 0
 2:0/0/terrain_set = 1
 2:0/0/terrain = 0
-2:0/0/terrains_peering_bit/right_side = 0
 2:0/0/terrains_peering_bit/left_side = 0
-3:0/0 = 0
-3:0/0/terrain_set = 1
-3:0/0/terrain = 0
-3:0/0/terrains_peering_bit/right_side = 0
-3:0/0/terrains_peering_bit/left_side = 0
-4:0/0 = 0
-4:0/0/terrain_set = 1
-4:0/0/terrain = 0
-4:0/0/probability = 0.5
-4:0/0/terrains_peering_bit/left_side = 0
-0:1/0 = 0
-0:1/0/terrain_set = 1
-0:1/0/terrain = 0
-1:1/0 = 0
-1:1/0/terrain_set = 1
-1:1/0/terrain = 0
-1:1/0/probability = 0.5
-1:1/0/terrains_peering_bit/right_side = 0
-2:1/0 = 0
-2:1/0/terrain_set = 1
-2:1/0/terrain = 0
-2:1/0/terrains_peering_bit/left_side = 0
-3:1/0 = 0
-3:1/0/terrain_set = 1
-3:1/0/terrain = 0
-3:1/0/terrains_peering_bit/right_side = 0
-4:1/0 = 0
-4:1/0/terrain_set = 1
-4:1/0/terrain = 0
-4:1/0/terrains_peering_bit/left_side = 0
 6:1/0 = 0
 6:1/0/terrain_set = 0
 6:1/0/terrain = 0
@@ -563,13 +538,53 @@ texture = ExtResource("1_76elo")
 1:2/0/terrain_set = 1
 1:2/0/terrain = 0
 1:2/0/terrains_peering_bit/right_side = 0
+1:2/0/terrains_peering_bit/left_side = 0
 2:2/0 = 0
 2:2/0/terrain_set = 1
 2:2/0/terrain = 0
 2:2/0/terrains_peering_bit/left_side = 0
+6:0/0 = 0
+6:0/0/terrain_set = 1
+6:0/0/terrain = 0
+6:0/0/terrains_peering_bit/right_side = 0
+7:0/0 = 0
+7:0/0/terrain_set = 1
+7:0/0/terrain = 0
+7:0/0/terrains_peering_bit/right_side = 0
+7:0/0/terrains_peering_bit/left_side = 0
+8:0/0 = 0
+8:0/0/terrain_set = 1
+8:0/0/terrain = 0
+8:0/0/probability = 0.5
+8:0/0/terrains_peering_bit/left_side = 0
+10:0/0 = 0
+10:0/0/terrain_set = 1
+10:0/0/terrain = 0
+8:4/0 = 0
+8:4/0/terrain_set = 1
+8:4/0/terrain = 0
+8:4/0/terrains_peering_bit/left_side = 0
+7:4/0 = 0
+7:4/0/terrain_set = 1
+7:4/0/terrain = 0
+7:4/0/terrains_peering_bit/right_side = 0
+7:4/0/terrains_peering_bit/left_side = 0
+6:4/0 = 0
+6:4/0/terrain_set = 1
+6:4/0/terrain = 0
+6:4/0/terrains_peering_bit/right_side = 0
+0:2/0 = 0
+0:2/0/terrain_set = 1
+0:2/0/terrain = 0
+0:2/0/terrains_peering_bit/right_side = 0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_i128a"]
+diffuse_texture = ExtResource("2_wpudk")
+normal_texture = ExtResource("1_iub51")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fjint"]
-texture = ExtResource("2_wpudk")
+resource_name = "MuddySwamp"
+texture = SubResource("CanvasTexture_i128a")
 9:0/0 = 0
 10:0/0 = 0
 11:0/0 = 0
@@ -970,11 +985,6 @@ texture = ExtResource("2_wpudk")
 23:18/0 = 0
 24:18/0 = 0
 25:18/0 = 0
-0:19/0 = 0
-1:19/0 = 0
-2:19/0 = 0
-3:19/0 = 0
-4:19/0 = 0
 16:19/0 = 0
 17:19/0 = 0
 18:19/0 = 0
@@ -1053,6 +1063,12 @@ texture = ExtResource("2_wpudk")
 24:24/0 = 0
 25:24/0 = 0
 26:24/0 = 0
+0:24/0 = 0
+2:24/0 = 0
+4:24/0 = 0
+3:24/0 = 0
+1:24/0 = 0
+2:21/0 = 0
 
 [resource]
 physics_layer_0/collision_layer = 1

@@ -1,6 +1,6 @@
 class_name PlayerStateJump extends PlayerState
 
-@export var jump_velocity : float = 400
+@export var jump_velocity : float = 420
 
 # what happens when this state is initialized?
 func init() -> void:
