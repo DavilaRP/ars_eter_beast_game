@@ -1,6 +1,8 @@
 @icon( "res://player/states/state.svg" )
 class_name PlayerState extends Node
 
+# classe base de estados
+
 var player : Player
 var next_state : PlayerState
 

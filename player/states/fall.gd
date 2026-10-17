@@ -49,10 +49,10 @@ func physics_process( _delta: float) -> PlayerState:
 		if buffer_timer > 0:
 			return jump
 		return idle
-	player.velocity.x = player.direction.x * player.move_speed
+	player.velocity.x = player.direction.x * player.move_speed # permite se movimentar no ar
 	return next_state
 
-func set_jump_frame() -> void:
-	var frame : float = remap( player.velocity.y, 0.0, player.max_fall_velocity, 0.5, 0.7 )
+func set_jump_frame() -> void: # configura o frame do salto baseado na velocidade
+	var frame : float = remap( player.velocity.y, 0.0, player.max_fall_velocity, 0.5, 0.7 ) # o frame vai do frame 0.2 da animacao ate o frame 0.4, dependendo da escala da velocidade
 	player.animation_player.seek( frame, true )
 	pass
